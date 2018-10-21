@@ -1,4 +1,4 @@
-import random
+import random,math
 vigenere_table = {}
 
 alphabet = "абвгдежзийклмнопрстуфхцчшщыьэюя"
@@ -45,9 +45,8 @@ def search_index_matching(Our_string,key_length):
 	for i in temp_dict.keys():
 		index_matching+=(temp_dict[i])*(temp_dict[i]-1)/(len(temp_string)*(len(temp_string)-1))
 	return index_matching
-
 create_table(vigenere_table)
-#print_table(vigenere_table)
+print_table(vigenere_table)
 #creating keys
 index_dict ={}
 
@@ -75,8 +74,10 @@ for i in keys.keys():
 	index_dict[str(i)]=search_index_matching(temp_str,i)
 	cipher_text.write(temp_str)
 	cipher_text.close()
-
+'''
 print('<---match indices--->')
 for i in index_dict.keys():
-	print('[{}]:{}'.format(i,str(index_dict[i])))
-file.close()		
+	#print('[{}]:{}'.format(i,str(index_dict[i])))
+	pass
+	'''
+file.close()
