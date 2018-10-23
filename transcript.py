@@ -36,8 +36,12 @@ while Flag:
 	if(search_index_matching(our_cipher_text,i)>=0.0553):
 		Flag=False
 	else:
+		#print(search_index_matching(our_cipher_text,i),i)
 		i+=1
-
+		'''
+for i in range(2,40):
+	print(search_index_matching(our_cipher_text,i),i)
+'''
 print('Our key length:{}'.format(str(i)))
 
 #blocking
@@ -74,16 +78,17 @@ for j in range(0,i):
 		Temp_string = "---"+Index+"---: "+str(frequency_dictionary[Index])
 		
 	shift_dict[j]=temp_arr[0]+temp_arr[1]+temp_arr[2]
-'''	
+'''
 for j in range(0,i):
 	print(shift_dict[j])
+	'''
 for j in range(0,i):
 	temp_str=[shift_dict[j][0],shift_dict[j][1],shift_dict[j][2]]
 	temp_str[0]=alphabet[(alphabet.find(temp_str[0])-alphabet.find('о'))%32]
 	temp_str[1]=alphabet[(alphabet.find(temp_str[1])-alphabet.find('о'))%32]
 	temp_str[2]=alphabet[(alphabet.find(temp_str[2])-alphabet.find('о'))%32]
 	print(temp_str)
-	'''
+	
 key = ""
 for j in range(0,i):
 	key+=alphabet[(alphabet.find(shift_dict[j][0])-alphabet.find('о'))%32]

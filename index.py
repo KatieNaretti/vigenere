@@ -32,7 +32,7 @@ def check(first,second):
 
 def search_index_matching(Our_string,key_length):
 	temp_string = ""
-	for i in range(0,len(Our_string),key_length):
+	for i in range(0,len(Our_string),1):
 		temp_string+=Our_string[i]
 	temp_dict = {}
 	for i in alphabet:
@@ -64,6 +64,7 @@ for i in [2,3,4,5,10,11,12,13,14,15,16,17,18,19,20]:
 		
 file = open('our-text.txt', encoding='utf-8')
 base_str = file.read()
+base_str= base_str.replace("ъ","ь")
 index_dict['open']=search_index_matching(base_str,1)
 
 for i in keys.keys():
@@ -74,10 +75,10 @@ for i in keys.keys():
 	index_dict[str(i)]=search_index_matching(temp_str,i)
 	cipher_text.write(temp_str)
 	cipher_text.close()
-'''
+
 print('<---match indices--->')
 for i in index_dict.keys():
-	#print('[{}]:{}'.format(i,str(index_dict[i])))
+	print('[{}]:{}'.format(i,str(index_dict[i])))
 	pass
-	'''
+	
 file.close()
